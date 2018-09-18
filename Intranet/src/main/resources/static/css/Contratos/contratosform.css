@@ -1,0 +1,50 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,100);
+
+body{
+ 	background: url("../../imgs/img3.jpg"); 
+	background-size: cover;
+ 	background-attachment: fixed;	 
+  	font-family: 'Roboto';
+ 	margin-top: 60mm;
+ }
+ h1{
+ 	color: #FFFAF0
+ 
+ }
+
+ .jumbotron {
+ 	background: rgba(0,0,0,.1);
+ 	color: #FFFAF0;
+ 	
+ }
+ 
+ .h1{
+ 	color: #FFFAF0;
+ }
+ .row.content {height: 1500px}
+    
+  
+    .sidenav {
+      background-color: #f1f1f1;
+      height: 100%;
+    }
+    
+  
+    footer {
+      background-color: #555;
+      color: white;
+      padding: 20px;
+    }
+    
+  
+    .col-sm-9 {
+        width: 100%;
+        margin-top: -40mm;
+    }
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {height: auto;}
+    }
+

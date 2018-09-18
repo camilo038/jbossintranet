@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>Intranet - Add/Contrato</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet"
+		href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script
+		src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <link href="#" th:href="@{/css/Contratos/contratosform.css}" rel="stylesheet" />
+</head>
+<body>
+
+	<div class="jumbotron">
+		<div class="container">
+			<h1>Agregar Contrato</h1>
+			<br/>
+			
+			
+			<form action="#" th:action="@{/contratos/addContrato}" th:object="${contrato}" method="get">
+			
+				<input type="text" class="form-control" th:field="*{id}" th:value="${id}" style="visibility: hidden;"></input>
+				Nit: <input type="text" class="form-control" th:field="*{nit}" th:value="${nit}" required></input>
+				<br/>
+				Ejecutivo: <input type="text" class="form-control" th:field="*{ejecutivo}" th:value="${ejecutivo}" required></input>
+				<br/>
+				Tipo de contrato: <input type="text" class="form-control" th:field="*{tipo_contrato}" th:value="${tipo_contrato}" required></input>
+				<br/>
+				Horario: <input type="text" class="form-control" th:field="*{horario}" th:value="${horario}" required></input>
+				<br/>
+				Fecha Inicial: <input type="text" class="form-control" th:field="*{f_inicio}" th:value="${f_inicio}" required></input>
+				<br/>
+				Fecha Final: <input type="text" class="form-control" th:field="*{f_final}" th:value="${f_final}" required></input>
+				<br/>
+				Num. Visitas: <input type="text" class="form-control" th:field="*{num_visitas}" th:value="${num_visitas}" required></input>
+				<br/>
+				Ing. Visita: <input type="text" class="form-control" th:field="*{ing_visita}" th:value="${ing_visita}" required></input>
+				<br/>
+				Mantenimiento 1: <input type="text" class="form-control" th:field="*{mantenimiento1}" th:value="${mantenimiento1}" required></input>
+				<br/> 
+				Mantenimiento 2: <input type="text" class="form-control" th:field="*{mantenimiento2}" th:value="${mantenimiento2}" required></input>
+				<br/>
+				Mantenimiento 3: <input type="text" class="form-control" th:field="*{mantenimiento3}" th:value="${mantenimiento3}" required></input>
+				<br/>
+				Mantenimiento 4: <input type="text" class="form-control" th:field="*{mantenimiento4}" th:value="${mantenimiento4}" required></input>
+				<br/>
+				<!--  <a href="#" th:href="@{/contratos/verContratoId?nit=__${contrato.nit}__}">	-->	
+				<button class="btn btn-lg btn-primary btn-block" type="submit">
+					<span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Agregar
+				</button>
+				<!-- </a>-->
+				
+			</form>
+			
+				<a href="#" th:href="@{/contratos/cancel?nit=__${contrato.nit}__}">			
+				<button class="btn btn-lg btn-primary btn-block" type="submit">
+					<span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Cancelar
+				</button>
+				</a>
+		</div>
+	</div>
+
+</body>
+</html>

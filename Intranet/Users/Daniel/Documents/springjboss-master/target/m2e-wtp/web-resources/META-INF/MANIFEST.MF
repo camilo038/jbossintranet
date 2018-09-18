@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: Spring Example Project
+Implementation-Version: 1.0-SNAPSHOT
+Built-By: Daniel
+Implementation-Vendor-Id: com.skillnet
+Build-Jdk: 1.8.0_171
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/Intranet
+Created-By: Maven Integration for Eclipse
+

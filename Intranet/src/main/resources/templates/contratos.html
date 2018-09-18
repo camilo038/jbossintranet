@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="utf-8"/>
+
+    <title>Intranet</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+
+    <!-- Custom styles for this template -->
+  <!--   <link href="#" th:href="@{/css/style.css}" rel="stylesheet" />-->
+    
+ 	<link href="#" th:href="@{/css/Contratos/contratos.css}" rel="stylesheet" />
+ 	
+  </head>
+
+  <body>
+	
+	<div class="container">
+	
+		<h1>Intranet Skillnet</h1>
+		<br/>
+		<div class="panel panel-default">
+			<div class="panel-heading"></div>
+			<table class="table">
+				<thead>
+					<tr>
+						<th>Nit</th>
+						<th>Ejecutivo</th>
+						<th>Tipo de Contrato</th>
+						<th>Horario</th>
+						<th>Fecha Inicio</th>
+						<th>Fecha Final</th>
+						<th>Num. Visitas</th>
+						<th>Ing. Visita</th>
+						<th>Mantenimiento 1</th>
+						<th>Mantenimiento 2</th>
+						<th>Mantenimiento 3</th>
+						<th>Mantenimiento 4</th>
+						
+					</tr>
+				</thead>
+				<tbody>
+				  
+					<tr th:each="Contrato : ${contratos}">
+						<td th:text ="${Contrato.nit}"></td>
+						<td th:text ="${Contrato.ejecutivo}"></td>
+						<td th:text ="${Contrato.tipo_contrato}"></td>
+						<td th:text ="${Contrato.horario}"></td>
+						<td th:text ="${Contrato.f_inicio}"></td>
+						<td th:text ="${Contrato.f_final}"></td>
+						<td th:text ="${Contrato.num_visitas}"></td>
+						<td th:text ="${Contrato.ing_visita}"></td>
+						<td th:text ="${Contrato.mantenimiento1}"></td>
+						<td th:text ="${Contrato.mantenimiento2}"></td>
+						<td th:text ="${Contrato.mantenimiento3}"></td>
+						<td th:text ="${Contrato.mantenimiento4}"></td>
+						  
+						<td>
+						  
+							<a href="#" th:href="@{/contratos/contratoEdit?nit=__${Contrato.nit}__&id=__${Contrato.id}__}">
+							<button type="button" class="btn btn-default"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></button>
+							</a>
+							
+							<a href="#" th:href="@{/contratos/removecontrato?nit=__${Contrato.nit}__&id=__${Contrato.id}__}">
+								<button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
+							</a>
+							
+						</td>
+					</tr>
+					
+				</tbody>
+			</table>
+		</div>
+		
+		<div th:if="${result == 1}" class="alert alert-success" role="alert">Agregado Exitosamente</div>
+		<div th:if="${result == 0}" class="alert alert-danger" role="alert">Error agregando cliente</div>
+		
+		
+		<a href="#" th:href="@{/contratos/contratosform}">
+		<button class="btn btn-lg btn-primary btn-block" type="submit"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Agregar</button>
+		</a>
+		
+		<a href ="#" th:href="@{/clientes/vercliente}">
+		<button class="btn btn-lg btn-primary btn-block" type="submit"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> Volver</button>
+		</a>
+	</div>
+
+
+</body>
+</html>
